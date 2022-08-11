@@ -1,23 +1,29 @@
 import './navbar.css'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import LogoImage from '../../assets/logo.png'
 
 function Navbar() {
+    const location = useLocation()
+    const linkParam = location.pathname.split("/").at(-1)
+    const [isActive, setIsActive] = useState(true)
+
+    useEffect(() => {
+        if (linkParam !== '') setIsActive(false)
+    }, [linkParam])
+
     return (
         <div className='navbar-container'>
             <div className="navbar-wrapper">
                 <div className="navbar-box-1">
-                    <img src="https://uploads-ssl.webflow.com/61e5e860ca5ccbb4eb1ea806/61e5ed555d407d7655bf649a_unwrap_logo.png" alt="Unwrap.Ai Logo" />
+                    <img src={LogoImage} alt="Unwrap.Ai Logo" />
                 </div>
                 <div className="navbar-box-2">
-                    <Link to="/">
-                        <div className="navbar-clst-link-box">
-                            <h1>Clustered</h1>
-                        </div>
+                    <Link className='nav-link' to="/">
+                        <h1 style={{color: isActive ? "#E06080" : "#FFFFFF", fontSize: isActive ? "2.5rem" : "1.8rem"}}>Clustered</h1>
                     </Link>
-                    <Link to="/unclustered">
-                        <div className="navbar-unclst-link-box">
-                            <h1>Unclustered</h1>
-                        </div>
+                    <Link className='nav-link' to="/unclustered">
+                        <h1 style={{color: isActive ? "#FFFFFF" : "#E06080", fontSize: isActive ? "1.8rem" : "2.5rem"}}>Unclustered</h1>
                     </Link>
                 </div>
             </div>

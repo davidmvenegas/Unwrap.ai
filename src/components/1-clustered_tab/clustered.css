@@ -1,0 +1,54 @@
+.clst-wrapper {
+    margin: 2.5rem 8rem;
+}
+
+/* Header */
+.clst-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+.clst-header-box {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.clst-header-search-box input {
+    height: 3.85rem;
+    width: 20rem;
+    border-radius: .65rem;
+    border: none;
+    outline: none;
+    color: #282e5e;
+    font-size: 1.65rem;
+    padding-left: 1.25rem;
+}
+.clst-header-search-box input:focus {
+    border: 1px solid #282e5e90;
+    box-shadow: 0 0 8.5px #282e5e90;
+}
+.clst-header-fltr-box {
+    margin-right: 10rem;
+}
+.clst-header-fltr-box h2 {
+    font-weight: 800;
+    margin-left: .25rem;
+    margin-bottom: .25rem;
+}
+.fltr-select-box {
+    height: 3.85rem;
+    width: 18rem;
+    border-radius: .65rem;
+    border: 1px solid #282e5e90;
+    outline: none;
+    font-size: 1.65rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #282e5e;
+    padding-left: 1.25rem;
+    cursor: pointer;
+}
+
+/* Body */
+.clst-body {
+}

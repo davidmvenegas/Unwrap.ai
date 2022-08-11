@@ -10,8 +10,6 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 body {
-    background-image: url(https://uploads-ssl.webflow.com/61e5e860ca5ccbb4eb1ea806/61f8984f5bf2447f0ea0d7fe_noise.png);
-    background-position: 0px 0px;
-    background-size: cover;
+    background: #e7ddd8;
     color: #282e5e;
 }

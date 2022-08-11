@@ -1,0 +1,33 @@
+.unclst-wrapper {
+    margin: 2.5rem 8rem;
+}
+
+/* Header */
+.unclst-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+.unclst-header-box {
+    margin-top: 4.25rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.unclst-header-search-box input {
+    height: 3.85rem;
+    width: 20rem;
+    border-radius: .65rem;
+    border: none;
+    outline: none;
+    color: #282e5e;
+    font-size: 1.65rem;
+    padding-left: 1.25rem;
+}
+.unclst-header-search-box input:focus {
+    border: 1px solid #282e5e90;
+    box-shadow: 0 0 8.5px #282e5e90;
+}
+
+/* Body */
+.unclst-body {
+}

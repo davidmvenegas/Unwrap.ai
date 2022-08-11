@@ -1,22 +1,33 @@
 .navbar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #282e5e;
+    height: 8rem;
 }
 .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 /* Navigation */
 .navbar-box-1 {
+    margin: 0 4rem 0 2rem;
 }
 .navbar-box-1 img {
+    height: 6rem;
+    margin: 0 4rem;
 }
 
 /* Links */
 .navbar-box-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.navbar-clst-link-box {
-}
-.navbar-clst-link-box h1 {
-}
-.navbar-unclst-link-box {
-}
-.navbar-unclst-link-box h1 {
+.nav-link {
+    text-decoration: none;
+    margin: 0 3rem;
 }
