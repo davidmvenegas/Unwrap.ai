@@ -1,5 +1,6 @@
 import './unclustered.css'
 import Navbar from '../0-navbar/Navbar'
+import Sentence from './Sentence'
 
 function Unclustered() {
     return (
@@ -14,7 +15,13 @@ function Unclustered() {
                         </div>
                     </div>
                 </div>
-                <div className="unclst-body"></div>
+                <div className="unclst-body">
+
+                    <Sentence/>
+                    <Sentence/>
+                    <Sentence/>
+
+                </div>
             </div>
         </div>
     )

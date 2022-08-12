@@ -42,9 +42,7 @@ function Clustered() {
                 </div>
                 <div className="clst-body">
 
-
                     <Clust/>
-
 
                 </div>
             </div>
