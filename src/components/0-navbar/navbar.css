@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: #282e5e;
+    background-color: var(--primary-color);
     height: 8rem;
 }
 .navbar-wrapper {

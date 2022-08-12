@@ -1,0 +1,91 @@
+.clst-wrapper {
+    background: #f1f0f0;
+    border: 2px solid var(--primary-color);
+    border-radius: .65rem;
+    padding: 2rem 2.25rem 0;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Cluster Title */
+.clst-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.35rem;
+    margin-bottom: .65rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+.clst-title-wrapper h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+#clst-title-accepted {
+    font-size: 3rem;
+    transition: all .1s ease;
+}
+#clst-title-accepted:hover {
+    transform: scale(1.085);
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.25) 0%, #ffffff00 75%);
+    cursor: pointer;
+}
+
+/* Cluster Sentence */
+.clst-sentence-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--secondary-color);
+}
+.clst-sentence-wrapper p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+    width: 87.5%;
+}
+.clst-sentence-wrapper p span {
+    font-weight: 800;
+}
+.clst-sentence-end-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12.5rem;
+}
+.clst-sentence-wrapper h4 {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+#clst-sentence-accepted {
+    font-size: 1.75rem;
+    transition: all .2s ease;
+}
+#clst-sentence-accepted:hover {
+    transform: scale(1.085);
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.25) 0%, #ffffff00 75%);
+    cursor: pointer;
+}
+
+/* Cluster Dropdown */
+.clst-dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.125rem 0 1.25rem;
+}
+.clst-dropdown-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.clst-dropdown-wrapper p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-right: .5rem;
+}
+#clst-dropdown-click {
+    font-size: 2.125rem;
+    font-weight: 800;
+}

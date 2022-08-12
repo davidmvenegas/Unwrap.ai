@@ -1,5 +1,6 @@
 import './clustered.css'
 import Navbar from '../0-navbar/Navbar'
+import Clust from './Clust'
 
 function Clustered() {
 
@@ -22,7 +23,7 @@ function Clustered() {
     return (
         <div>
             <Navbar/>
-            <div className='clst-wrapper'>
+            <div className='clst-container'>
                 <div className="clst-header">
                     <h1>Feedback Clusters</h1>
                     <div className="clst-header-box">
@@ -39,7 +40,13 @@ function Clustered() {
                         </div>
                     </div>
                 </div>
-                <div className="clst-body"></div>
+                <div className="clst-body">
+
+
+                    <Clust/>
+
+
+                </div>
             </div>
         </div>
     )

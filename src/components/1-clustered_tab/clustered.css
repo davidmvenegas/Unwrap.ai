@@ -1,4 +1,4 @@
-.clst-wrapper {
+.clst-container {
     margin: 2.5rem 8rem;
 }
 
@@ -28,7 +28,7 @@
     box-shadow: 0 0 8.5px #282e5e90;
 }
 .clst-header-fltr-box {
-    margin-right: 10rem;
+    margin-right: 15rem;
 }
 .clst-header-fltr-box h2 {
     font-weight: 800;
@@ -44,11 +44,12 @@
     font-size: 1.65rem;
     font-weight: 800;
     font-style: italic;
-    color: #282e5e;
+    color: var(--primary-color);
     padding-left: 1.25rem;
     cursor: pointer;
 }
 
 /* Body */
 .clst-body {
+    margin: 4rem 0;
 }

@@ -19,7 +19,7 @@
     border-radius: .65rem;
     border: none;
     outline: none;
-    color: #282e5e;
+    color: var(--primary-color);
     font-size: 1.65rem;
     padding-left: 1.25rem;
 }
