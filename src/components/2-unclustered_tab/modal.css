@@ -66,8 +66,9 @@
     margin-bottom: 1.75rem;
     height: 5.25rem;
     width: 837.5px;
-    border-radius: .4rem;
-    box-shadow: 0 0 8px 3px #e06080a0;
+    border: 2px solid var(--primary-color);
+    border-radius: .5rem;
+    box-shadow: 4px 4px 0px 0px #e06080;
     padding: 1.25rem;
     overflow-x: auto;
     overflow-y: hidden;
@@ -107,7 +108,7 @@
     padding-left: 1.25rem;
 }
 .modal-clst-search-wrapper input:focus {
-    box-shadow: 0 0 8.5px #282e5e90;
+    box-shadow: 0 0 8px 2px #e06080a0;
 }
 
 /* Modal Clusters */
@@ -162,10 +163,10 @@
     border: none;
     border-radius: 0 .5rem .5rem 0;
     color: white;
-    background-color: #4BB543;
+    background-color: rgb(52, 152, 45);
     cursor: pointer;
     transition: all .05s ease;
 }
 .modal-add-clst-box button:hover {
-    background-color: rgb(46, 143, 39);
+    background-color: rgb(38, 133, 32);
 }
