@@ -13,4 +13,7 @@ export class FeedbackSentences extends BaseEntity {
 
     @Column()
     feedback_date!: string
+
+    @Column()
+    unstructured!: number
 }

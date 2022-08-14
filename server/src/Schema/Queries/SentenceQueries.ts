@@ -2,11 +2,24 @@ import { GraphQLList, GraphQLInt } from "graphql"
 import { FeedbackSentences } from "../../Entities/SentenceEntity"
 import { SentenceType } from "../Types/SentenceType"
 
-export const GET_ALL_SENTENCES = {
+export const GET_ALL_UNSTRUCTURED_SENTENCES = {
     type: new GraphQLList(SentenceType),
-    description: 'Get all sentences',
-    resolve() {
-        return FeedbackSentences.find()
+    description: 'Get all unstructured sentences',
+    args: {
+        offset: { type: GraphQLInt },
+    },
+    resolve(parent: any, args: any) {
+        const { offset } = args
+        return FeedbackSentences.find({
+            where: {
+                unstructured: 1
+            },
+            order: {
+                id: 'ASC'
+            },
+            skip: offset,
+            take: 25
+        })
     },
 }
 

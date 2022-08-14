@@ -6,12 +6,19 @@ export const GET_ALL_CLUSTERS = gql`
             id
             title
             accepted
+            sentences {
+                id
+                sentence_text
+                order_within_feedback_entry
+                feedback_date
+                unstructured
+            }
         }
     }`
 
 export const GET_A_SINGLE_CLUSTER = gql`
     query getASingleCluster(
-        $cluster_id: Number!
+        $cluster_id: Int!
     ) {
         getASingleCluster(
         id: $cluster_id
@@ -22,19 +29,25 @@ export const GET_A_SINGLE_CLUSTER = gql`
         }
     }`
 
-export const GET_ALL_SENTENCES = gql`
-    query getAllSentences {
-        getAllSentences {
+export const GET_ALL_UNSTRUCTURED_SENTENCES = gql`
+    query getAllUnstructuredSentences(
+        $offset: Int!
+    ) {
+        getAllUnstructuredSentences(
+        offset: $offset
+    ) {
             id
             sentence_text
             order_within_feedback_entry
             feedback_date
+            unstructured
+            total
         }
     }`
 
     export const GET_A_SINGLE_SENTENCE = gql`
     query getASingleSentence(
-        $sentence_id: Number!
+        $sentence_id: Int!
     ) {
         getASingleSentence(
         id: sentence_id
@@ -43,6 +56,7 @@ export const GET_ALL_SENTENCES = gql`
             sentence_text
             order_within_feedback_entry
             feedback_date
+            unstructured
         }
     }`
 

@@ -2,6 +2,7 @@
 :root {
     --primary-color: #282e5e;
     --secondary-color: #e7ddd8;
+    --third-color: #e06080;
 }
 * {
     margin: 0;

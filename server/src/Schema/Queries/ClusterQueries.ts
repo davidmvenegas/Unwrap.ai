@@ -6,7 +6,11 @@ export const GET_ALL_CLUSTERS = {
     type: new GraphQLList(ClusterType),
     description: 'Get all clusters',
     resolve() {
-        return FeedbackClusters.find()
+        return FeedbackClusters.find({
+            order: {
+                id: 'ASC'
+            },
+        })
     },
 }
 

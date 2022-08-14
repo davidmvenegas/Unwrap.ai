@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLInt } from "graphql"
+import { GraphQLObjectType, GraphQLInt, GraphQLList } from "graphql"
 
 export const MappingType = new GraphQLObjectType({
     name: "Mapping",

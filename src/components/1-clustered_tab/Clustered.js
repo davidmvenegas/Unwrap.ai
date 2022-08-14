@@ -1,19 +1,33 @@
 import './clustered.css'
+import { GET_ALL_CLUSTERS } from "../../graphql/Queries"
+import { useState, useEffect } from 'react'
+import { useQuery } from "@apollo/client"
 import Navbar from '../0-navbar/Navbar'
 import Clust from './Clust'
 
 function Clustered() {
+    const { loading, data } = useQuery(GET_ALL_CLUSTERS)
+    const [clusts, setClusts] = useState()
+    const [search, setSearch] = useState('')
+
+    const allClusts = data?.getAllClusters
+    const acceptedClusts = data?.getAllClusters.filter(clust => clust.accepted === 1)
+    const notAcceptedClusts = data?.getAllClusters.filter(clust => clust.accepted === 0)
+
+    useEffect(() => setClusts(allClusts), [allClusts])
+
+    const filteredClusts = clusts?.filter(clst => clst?.title?.toLowerCase().includes(search.toLowerCase()))
 
     function handleSelection(e) {
     switch (e.target.selectedIndex) {
         case 0:
-            console.log("All")
+            setClusts(allClusts)
             break;
         case 1:
-            console.log("Accepted")
+            setClusts(acceptedClusts)
             break;
         case 2:
-            console.log("Unaccepted")
+            setClusts(notAcceptedClusts)
             break;
         default:
             break;
@@ -28,7 +42,7 @@ function Clustered() {
                     <h1>Feedback Clusters</h1>
                     <div className="clst-header-box">
                         <div className="clst-header-search-box">
-                            <input type="text" placeholder='Search' />
+                            <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
                         </div>
                         <div className="clst-header-fltr-box">
                             <h2>Sort By</h2>
@@ -41,9 +55,15 @@ function Clustered() {
                     </div>
                 </div>
                 <div className="clst-body">
-
-                    <Clust/>
-
+                    {loading ?
+                        <div id="loading-modal-clust"></div>
+                        :
+                        <>{filteredClusts?.length > 0 ? filteredClusts?.map(clust => (
+                            <Clust key={clust.id} clust={clust} />
+                        )) :
+                            <p id='no-data-to-display'>No data to display</p>
+                        }</>
+                    }
                 </div>
             </div>
         </div>
