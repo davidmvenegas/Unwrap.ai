@@ -1,9 +1,9 @@
 import { GraphQLObjectType, GraphQLInt, GraphQLString, GraphQLList } from "graphql"
+import { DataSource } from "typeorm"
 import { SentenceClusterMapping } from "../../Entities/MappingEntity"
 import { FeedbackSentences } from "../../Entities/SentenceEntity"
 import { FeedbackClusters } from "../../Entities/ClusterEntity"
 import { SentenceType } from "./SentenceType"
-import { DataSource } from "typeorm"
 
 export const ClusterType = new GraphQLObjectType({
     name: "Cluster",
@@ -13,7 +13,18 @@ export const ClusterType = new GraphQLObjectType({
         accepted: { type: GraphQLInt },
         sentences: {
             type: new GraphQLList(SentenceType),
-            resolve: (clust) => {
+            resolve: async (clust) => {
+                // const sentenceIds = (await SentenceClusterMapping.findBy({ cluster_id: clust.id })).map(data => data.sentence_id)
+
+                // return sentenceIds.map(sentenceId => (
+                //         (async (sentcId) => {
+                //             const sentence = await FeedbackSentences.findBy({ id: sentcId })
+                //             console.log(sentence)
+                //             // return sentence
+                //         })(sentenceId)
+                //     )
+                // )
+
                 return (async () => {
                     const db = new DataSource({
                         host: "coding-challenge.csxeniesqyv1.us-east-2.rds.amazonaws.com",

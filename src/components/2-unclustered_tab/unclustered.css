@@ -1,3 +1,6 @@
+.unclst-container {
+    height: 100vh;
+}
 .unclst-wrapper {
     margin: 2.5rem 8rem;
 }
@@ -48,8 +51,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
-    margin-bottom: 4rem;
+    height: 12rem;
+    margin-top: -4rem;
 }
 .pagination-box {
     display: flex;

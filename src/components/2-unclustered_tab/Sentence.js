@@ -1,11 +1,10 @@
 import './sentence.css'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { GrAddCircle } from 'react-icons/gr'
 import dateFormat from "dateformat"
 import Modal from './Modal'
 
-function Sentence({ sentc }) {
-    const [open, setOpen] = useState(false)
+function Sentence({ sentc, clusts, open, setOpen, sentcs, setSentcs, total, setTotal }) {
 
     const sentcText = sentc?.sentence_text
     const firstHalf = sentcText.match(/(^.*?[.!?,])|(^.{0,65}([^\s]+))/g)
@@ -13,7 +12,7 @@ function Sentence({ sentc }) {
 
     return (
         <Fragment>
-            <Modal open={open} setOpen={setOpen}/>
+            <Modal open={open} setOpen={setOpen} sentcId={sentc?.id} sentcText={sentcText} clusts={clusts} sentcs={sentcs} setSentcs={setSentcs} total={total} setTotal={setTotal}/>
             <div className="unclst-sentc-wrapper">
                 <div className="unclst-sentc-left-box">
                     <div className="unclst-sentc-accepted-box">

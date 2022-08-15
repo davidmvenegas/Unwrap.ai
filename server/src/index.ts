@@ -7,7 +7,7 @@ import { schema } from './Schema/schema'
 import express from 'express'
 import cors from 'cors'
 
-export const db = new DataSource({
+const db = new DataSource({
     host: "coding-challenge.csxeniesqyv1.us-east-2.rds.amazonaws.com",
     port: 3306,
     database: "davidvenegas",

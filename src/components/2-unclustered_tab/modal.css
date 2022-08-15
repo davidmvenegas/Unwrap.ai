@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.05);
     z-index: 100000;
 }
 .modal-container {
@@ -21,7 +21,7 @@
     height: 525px;
     border-radius: 6px;
     background: var(--secondary-color);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.01) 0px 5px 15px;
     padding: 1rem 2.5rem;
 }
 #close-modal {
