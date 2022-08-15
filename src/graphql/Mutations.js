@@ -2,21 +2,21 @@ import { gql } from "@apollo/client"
 
 export const UPDATE_CLUSTER_ACCEPTED = gql`
     mutation updateClusterAccepted (
-        $cluster_id: Number!
-        $accepted: Number!
+        $cluster_id: Int!
+        $accepted: Int!
     ) {
         updateClusterAccepted (
-            id: $cluster_id
+            cluster_id: $cluster_id
             accepted: $accepted
         ) {
-            message
+            id
         }
     }`
 
 export const UPDATE_SENTENCE_CLUSTER_ID = gql`
     mutation updateSentenceClusterId (
-        $sentence_id: Number!
-        $cluster_id: Number!
+        $sentence_id: Int!
+        $cluster_id: Int!
     ) {
         updateSentenceClusterId (
             sentence_id: $sentence_id

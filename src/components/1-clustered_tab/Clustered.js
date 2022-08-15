@@ -6,9 +6,10 @@ import Navbar from '../0-navbar/Navbar'
 import Clust from './Clust'
 
 function Clustered() {
-    const { loading, data } = useQuery(GET_ALL_CLUSTERS)
+    const { loading, data, refetch } = useQuery(GET_ALL_CLUSTERS)
     const [clusts, setClusts] = useState()
     const [search, setSearch] = useState('')
+    const [reload, setReload] = useState(false)
 
     const allClusts = data?.getAllClusters
     const acceptedClusts = data?.getAllClusters.filter(clust => clust.accepted === 1)
@@ -46,7 +47,7 @@ function Clustered() {
                         </div>
                         <div className="clst-header-fltr-box">
                             <h2>Sort By</h2>
-                            <select className="fltr-select-box" onChange={handleSelection}>
+                            <select id='fltr-select-form' className="fltr-select-box" onChange={handleSelection}>
                                 <option id="fltr-select-option" value="all">All</option>
                                 <option id="fltr-select-option" value="accepted">Accepted</option>
                                 <option id="fltr-select-option" value="unaccepted">Unaccepted</option>
@@ -55,11 +56,11 @@ function Clustered() {
                     </div>
                 </div>
                 <div className="clst-body">
-                    {loading ?
+                    {loading || reload ?
                         <div id="loading-modal-clust"></div>
                         :
                         <>{filteredClusts?.length > 0 ? filteredClusts?.map(clust => (
-                            <Clust key={clust.id} clust={clust} />
+                            <Clust key={clust.id} clust={clust} refetch={refetch} setReload={setReload}/>
                         )) :
                             <p id='no-data-to-display'>No data to display</p>
                         }</>

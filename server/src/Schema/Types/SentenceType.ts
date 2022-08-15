@@ -25,6 +25,7 @@ export const SentenceType = new GraphQLObjectType({
                         type: "mysql",
                         logging: true,
                         synchronize: false,
+                        
                         entities: [
                             FeedbackClusters,
                             FeedbackSentences,

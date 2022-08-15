@@ -1,18 +1,39 @@
 import './clust.css'
 import { useState } from 'react'
+import { UPDATE_CLUSTER_ACCEPTED } from '../../graphql/Mutations'
 import { GrSubtractCircle, GrAddCircle } from 'react-icons/gr'
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
+import { useMutation } from '@apollo/client'
 import dateFormat from "dateformat"
 
-function Clust({ clust }) {
+function Clust({ clust, refetch, setReload }) {
     const [showMore, setShowMore] = useState(false)
     const currentSenctences = showMore ? clust?.sentences : clust?.sentences?.slice(0, 4)
+
+    const [ updateClusterAccepted ] = useMutation(UPDATE_CLUSTER_ACCEPTED)
+
+    async function handleUpdateCluster(accept) {
+        await setReload(true)
+        await updateClusterAccepted({
+            variables: {
+            cluster_id: clust?.id,
+            accepted: accept,
+            },
+        })
+        document.querySelector("#fltr-select-form").selectedIndex = 0
+        await refetch()
+        await setReload(false)
+    }
 
     return (
         <div className="clst-wrapper" style={clust?.accepted ? null : {opacity: .5}}>
             <div className="clst-title-wrapper">
                 <h1>{clust?.title}</h1>
-                {clust?.accepted ? <GrSubtractCircle id='clst-title-accepted'/> : <GrAddCircle id='clst-title-not-accepted'/>}
+                {clust?.accepted
+                    ?
+                <GrSubtractCircle id='clst-title-accepted' onClick={() => handleUpdateCluster(0)} />
+                    :
+                <GrAddCircle id='clst-title-not-accepted' onClick={() => handleUpdateCluster(1)}/>}
             </div>
 
             <div className="clst-sentence-container">
