@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.725);
     z-index: 100000;
 }
 .modal-container {
@@ -21,7 +21,7 @@
     height: 525px;
     border-radius: 6px;
     background: var(--secondary-color);
-    box-shadow: rgba(0, 0, 0, 0.01) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
     padding: 1rem 2.5rem;
 }
 #close-modal {
@@ -86,9 +86,11 @@
     border-radius: 1rem;
 }
 .modal-sentc-wrapper p {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     font-weight: 700;
     font-style: italic;
+    color: #e06080;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.65);
 }
 .modal-clst-wrapper {
     border-radius: .25rem;
@@ -132,7 +134,7 @@
     justify-content: space-between;
     margin-bottom: .75rem;
     border-radius: .5rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     background: whitesmoke;
     height: 5rem;
 }
@@ -141,8 +143,9 @@
     width: 90%;
 }
 .modal-clst h2 {
-    font-weight: 800;
+    font-weight: 900;
     font-size: 1.65rem;
+    color: #333;
 }
 .modal-add-clst-box {
     display: flex;

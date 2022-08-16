@@ -32,9 +32,11 @@ export const GET_A_SINGLE_CLUSTER = gql`
 export const GET_ALL_UNSTRUCTURED_SENTENCES = gql`
     query getAllUnstructuredSentences(
         $offset: Int!
+        $keyword: String!
     ) {
         getAllUnstructuredSentences(
         offset: $offset
+        keyword: $keyword
     ) {
             id
             sentence_text

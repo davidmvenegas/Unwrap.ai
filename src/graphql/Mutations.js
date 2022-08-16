@@ -29,11 +29,9 @@ export const ADD_SENTENCE_CLUSTER_ID = gql`
 export const REMOVE_SENTENCE_CLUSTER_ID = gql`
     mutation removeSentenceClusterId (
         $sentence_id: Int!
-        $cluster_id: Int!
     ) {
         removeSentenceClusterId (
             sentence_id: $sentence_id
-            cluster_id: $cluster_id
         ) {
             id
         }

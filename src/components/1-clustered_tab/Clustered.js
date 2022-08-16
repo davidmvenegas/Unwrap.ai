@@ -16,9 +16,8 @@ function Clustered() {
 
     const filteredClusts = clusts?.filter(clst => clst?.title?.toLowerCase().includes(search.toLowerCase()))
 
-    useEffect(() => setClusts(allClusts), [allClusts])
-
-    console.log(allClusts)
+    // eslint-disable-next-line
+    useEffect(() => setClusts(allClusts), [])
 
     function handleSelection(e) {
     switch (e.target.selectedIndex) {
@@ -61,7 +60,7 @@ function Clustered() {
                         <div id="loading-modal-clust"></div>
                         :
                         <>{filteredClusts?.length > 0 ? filteredClusts?.map(clust => (
-                            <Clust key={clust.id} clust={clust}/>
+                            <Clust key={clust.id} clust={clust} />
                         )) :
                             <p id='no-data-to-display'>No data to display</p>
                         }</>

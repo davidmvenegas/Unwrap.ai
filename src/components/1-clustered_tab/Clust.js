@@ -11,9 +11,9 @@ function Clust({ clust }) {
     const [accepted, setAccepted] = useState(clust.accepted)
     const [sentences, setSentences] = useState(clust.sentences)
 
-    // const sortedSentences = sentences?.sort((a, b) => a.order_within_feedback_entry - b.order_within_feedback_entry)
-    // const currentSenctences = showMore ? sortedSentences : sortedSentences?.slice(0, 4)
-    const currentSenctences = sentences
+    const arrayForSort = [...sentences]
+    const sortedSentences = arrayForSort?.sort((a, b) => a.order_within_feedback_entry - b.order_within_feedback_entry)
+    const currentSenctences = showMore ? sortedSentences : sortedSentences?.slice(0, 4)
 
     const [ updateClusterAccepted ] = useMutation(UPDATE_CLUSTER_ACCEPTED)
 
@@ -54,7 +54,7 @@ function Clust({ clust }) {
     )
 }
 
-function Sentence({ sentc, clustId, sentences, setSentences }) {
+function Sentence({ sentc, sentences, setSentences }) {
     const [ removeSentenceClusterId ] = useMutation(REMOVE_SENTENCE_CLUSTER_ID)
 
     const sentcText = sentc?.sentence_text
@@ -64,8 +64,7 @@ function Sentence({ sentc, clustId, sentences, setSentences }) {
     async function handleRemoveSentenceClusterId() {
         await removeSentenceClusterId({
             variables: {
-                sentence_id: sentc?.id,
-                cluster_id: clustId
+                sentence_id: sentc.id,
             },
         }).then(setSentences(sentences.filter(sent => sent.id !== sentc.id)))
     }

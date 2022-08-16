@@ -12,7 +12,8 @@ export const ADD_SENTENCE_CLUSTER_ID = {
     },
     async resolve(parent: any, args: any) {
         const { sentence_id, cluster_id } = args
-        await SentenceClusterMapping.insert({ sentence_id, cluster_id })
+        const id = Math.round(Math.random() * 10000000)
+        await SentenceClusterMapping.insert({ id, sentence_id, cluster_id })
         await FeedbackSentences.update({ id: sentence_id }, { unstructured: 0 })
         return { successful: true, message: "INSERTED INTO MAPPING TABLE" }
     }
@@ -22,12 +23,11 @@ export const REMOVE_SENTENCE_CLUSTER_ID = {
     type: SentenceType,
     description: "Remove a sentence's cluster id",
     args: {
-        sentence_id: { type: GraphQLInt },
-        cluster_id: { type: GraphQLInt },
+        sentence_id: { type: GraphQLInt }
     },
     async resolve(parent: any, args: any) {
-        const { sentence_id, cluster_id } = args
-        await SentenceClusterMapping.delete({ sentence_id, cluster_id })
+        const { sentence_id } = args
+        await SentenceClusterMapping.delete({ sentence_id })
         await FeedbackSentences.update({ id: sentence_id }, { unstructured: 1 })
         return { successful: true, message: "REMOVED FROM MAPPING TABLE" }
     }

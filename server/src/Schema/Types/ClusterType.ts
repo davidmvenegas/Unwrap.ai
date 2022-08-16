@@ -14,17 +14,6 @@ export const ClusterType = new GraphQLObjectType({
         sentences: {
             type: new GraphQLList(SentenceType),
             resolve: async (clust) => {
-                // const sentenceIds = (await SentenceClusterMapping.findBy({ cluster_id: clust.id })).map(data => data.sentence_id)
-
-                // return sentenceIds.map(sentenceId => (
-                //         (async (sentcId) => {
-                //             const sentence = await FeedbackSentences.findBy({ id: sentcId })
-                //             console.log(sentence)
-                //             // return sentence
-                //         })(sentenceId)
-                //     )
-                // )
-
                 return (async () => {
                     const db = new DataSource({
                         host: "coding-challenge.csxeniesqyv1.us-east-2.rds.amazonaws.com",
@@ -48,6 +37,6 @@ export const ClusterType = new GraphQLObjectType({
                     return data
                 })()
             }
-        },
-    }),
+        }
+    })
 })

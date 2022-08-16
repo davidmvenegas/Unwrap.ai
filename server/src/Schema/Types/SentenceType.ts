@@ -9,11 +9,6 @@ export const SentenceType = new GraphQLObjectType({
         order_within_feedback_entry: { type: GraphQLInt },
         feedback_date: { type: GraphQLString },
         unstructured: { type: GraphQLInt },
-        total: {
-            type: GraphQLInt,
-            resolve: () => {
-                return FeedbackSentences.countBy({unstructured: 1})
-            }
-        },
+        total: { type: GraphQLInt },
     }),
 })

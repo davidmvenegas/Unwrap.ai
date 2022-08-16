@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { BaseEntity, Column, Entity, Generated, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity()
 export class SentenceClusterMapping extends BaseEntity {
